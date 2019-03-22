@@ -1,4 +1,4 @@
-package com.zuofei.openesegl;
+package com.zuofei.openesegl.utils;
 
 import android.view.Surface;
 

@@ -1,4 +1,4 @@
-package com.zuofei.openesegl;
+package com.zuofei.openesegl.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,9 @@ import android.opengl.GLES20;
 import android.os.Bundle;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+
+import com.zuofei.openesegl.utils.EglHelper;
+import com.zuofei.openesegl.R;
 
 public class MainActivity extends AppCompatActivity {
     private SurfaceView surfaceView;
@@ -22,14 +25,14 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void surfaceChanged(final SurfaceHolder holder, int format, final int width, final int height) {
-                new Thread(){
-                    @Override
-                    public void run() {
-                        super.run();
-                        render(holder, width, height);
-                        return;
-                    }
-                }.start();
+//                new Thread(){
+//                    @Override
+//                    public void run() {
+//                        super.run();
+//                        //render(holder, width, height);
+//                        return;
+//                    }
+//                }.start();
             }
 
             @Override

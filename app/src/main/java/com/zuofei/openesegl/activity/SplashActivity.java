@@ -1,4 +1,4 @@
-package com.zuofei.openesegl;
+package com.zuofei.openesegl.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,12 +7,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.zhengsr.viewpagerlib.bean.PagerBean;
 import com.zhengsr.viewpagerlib.callback.PagerHelperListener;
 import com.zhengsr.viewpagerlib.indicator.ZoomIndicator;
 import com.zhengsr.viewpagerlib.view.GlideViewPager;
+import com.zuofei.openesegl.R;
+import com.zuofei.openesegl.activity.login.LoginActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,9 +26,9 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        GlideViewPager viewPager = (GlideViewPager) findViewById(R.id.splase_viewpager);
-        ZoomIndicator zoomIndicator = (ZoomIndicator) findViewById(R.id.splase_bottom_layout);
-        Button button = (Button) findViewById(R.id.splase_start_btn);
+        GlideViewPager viewPager =  findViewById(R.id.splase_viewpager);
+        ZoomIndicator zoomIndicator =  findViewById(R.id.splase_bottom_layout);
+        Button button =  findViewById(R.id.splase_start_btn);
 
 
         //先把本地的图片 id 装进 list 容器中
@@ -56,7 +57,7 @@ public class SplashActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(SplashActivity.this,MainActivity.class));
+                startActivity(new Intent(SplashActivity.this, LoginActivity.class));
                 finish();
             }
         });

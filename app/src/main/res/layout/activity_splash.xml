@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:zsr="http://schemas.android.com/apk/res-auto"
-    tools:context=".SplashActivity">
+    tools:context=".activity.SplashActivity">
 
     <com.zhengsr.viewpagerlib.view.GlideViewPager
         android:id="@+id/splase_viewpager"
