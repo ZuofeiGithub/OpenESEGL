@@ -27,4 +27,11 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha4'
     implementation project(':viewpagerlib')
     implementation files('E:/code/android/OpenESEGL/libs/sun.misc.BASE64Decoder.jar')
+
+    implementation 'com.qianwen:update-app:3.5.2'
+
+    implementation 'com.qianwen:okhttp-utils:3.8.0'
+
+    implementation 'io.reactivex:rxandroid:1.2.0'
+    implementation 'com.tbruyelle.rxpermissions:rxpermissions:0.9.4@aar'
 }

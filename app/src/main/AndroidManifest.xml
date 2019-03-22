@@ -4,7 +4,15 @@
     package="com.zuofei.openesegl">
 
     <dist:module dist:instant="true" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
 
+    <meta-data
+        android:name="UPDATE_APP_KEY"
+        android:value="ab55ce55Ac4bcP408cPb8c1Aaeac179c5f6f"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
