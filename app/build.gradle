@@ -34,4 +34,8 @@ dependencies {
 
     implementation 'io.reactivex:rxandroid:1.2.0'
     implementation 'com.tbruyelle.rxpermissions:rxpermissions:0.9.4@aar'
+
+    implementation 'com.github.adrielcafe:AndroidAudioRecorder:0.3.0'
+    implementation project(path: ':lib')
+
 }

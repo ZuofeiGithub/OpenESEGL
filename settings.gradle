@@ -1,1 +1,2 @@
-include ':app', ':viewpagerlib'
+include ':app', ':viewpagerlib', ':lib'
+project(':lib').projectDir = new File('AndroidBackgroundVideoRecording/lib')
