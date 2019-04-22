@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.zuofei.openesegl.JiaoziVdideoPlayer;
 import com.zuofei.openesegl.R;
 import com.zuofei.openesegl.activity.MainActivity;
 import com.zuofei.openesegl.utils.Base64Utils;
@@ -206,18 +207,20 @@ public class LoginActivity extends Activity
 
 
                 //睡眠3秒
-                try {
-                    Thread.sleep(3000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+//                try {
+//                    Thread.sleep(3000);
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
 
                 //判断账号和密码
                 if (getAccount().equals("csdn") && getPassword().equals("123456")) {
                     showToast("登录成功");
                     loadCheckBoxState();//记录下当前用户记住密码和自动登录的状态;
 
-                    startActivity(new Intent(LoginActivity.this, MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK));
+                    //登陆成功进入录音界面
+                    //startActivity(new Intent(LoginActivity.this, MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK));
+                    startActivity(new Intent(LoginActivity.this, JiaoziVdideoPlayer.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK));
                     finish();//关闭页面
                 } else {
                     showToast("输入的登录账号或密码不正确");
