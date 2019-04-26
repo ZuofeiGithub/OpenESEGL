@@ -1,32 +1,30 @@
 package com.zuofei.openesegl;
 
-import androidx.appcompat.app.AppCompatActivity;
-import cn.jzvd.Jzvd;
-import cn.jzvd.JzvdStd;
-
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 
 import com.bumptech.glide.Glide;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 
-public class JiaoziVdideoPlayer extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
+import cn.jzvd.Jzvd;
+import cn.jzvd.JzvdStd;
+
+public class VdideoPlayerActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jiaozi_vdideo_player);
 
-        JzvdStd jzvdStd  = (JzvdStd ) findViewById(R.id.videoplayer);
+        JzvdStd jzvdStd = (JzvdStd) findViewById(R.id.videoplayer);
 
-        jzvdStd .setUp("http://jzvd.nathen.cn/c6e3dc12a1154626b3476d9bf3bd7266/6b56c5f0dc31428083757a45764763b0-5287d2089db37e62345123a1be272f8b.mp4"
-                , "饺子闭眼睛",JzvdStd .SCREEN_WINDOW_NORMAL);
+        jzvdStd.setUp("http://jzvd.nathen.cn/c6e3dc12a1154626b3476d9bf3bd7266/6b56c5f0dc31428083757a45764763b0-5287d2089db37e62345123a1be272f8b.mp4"
+                , "饺子闭眼睛", JzvdStd.SCREEN_WINDOW_NORMAL);
         Glide.with(this).load("http://p.qpic.cn/videoyun/0/2449_43b6f696980311e59ed467f22794e792_1/640").into(jzvdStd.thumbImageView);
         //jzvdStd.startButton.performClick();
     }
@@ -34,7 +32,7 @@ public class JiaoziVdideoPlayer extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if(Jzvd.backPress()){
+        if (Jzvd.backPress()) {
             return;
         }
         super.onBackPressed();

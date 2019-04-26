@@ -2,7 +2,10 @@ package com.zuofei.openesegl.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,11 +18,12 @@ import com.zhengsr.viewpagerlib.view.GlideViewPager;
 import com.zuofei.openesegl.R;
 import com.zuofei.openesegl.activity.login.LoginActivity;
 
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
 public class SplashActivity extends AppCompatActivity {
-    private static final Integer[] RES = {R.drawable.one,R.drawable.two,R.drawable.three};
+    private static final Integer[] RES = {R.drawable.banner1,R.drawable.banner2,R.drawable.banner3};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +55,11 @@ public class SplashActivity extends AppCompatActivity {
                 //通过获取到这个view，你可以随意定制你的内容
                 ImageView imageView = view.findViewById(R.id.icon);
                 imageView.setImageResource(data);
+                Bitmap bm = readBitMap(SplashActivity.this,data);
+                imageView.setImageBitmap(bm);
+                if(bm.isRecycled()){
+                    bm.recycle();
+                }
             }
         });
 
@@ -61,5 +70,15 @@ public class SplashActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    public static Bitmap readBitMap(Context context, int resId) {
+        BitmapFactory.Options opt = new BitmapFactory.Options();
+        opt.inPreferredConfig = Bitmap.Config.RGB_565;
+        opt.inPurgeable = true;
+        opt.inInputShareable = true;
+        //获取资源图片
+        InputStream is = context.getResources().openRawResource(resId);
+        return BitmapFactory.decodeStream(is, null, opt);
     }
 }

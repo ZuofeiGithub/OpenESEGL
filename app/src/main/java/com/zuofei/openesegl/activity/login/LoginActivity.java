@@ -12,9 +12,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.zuofei.openesegl.JiaoziVdideoPlayer;
+import com.zuofei.openesegl.VdideoPlayerActivity;
 import com.zuofei.openesegl.R;
-import com.zuofei.openesegl.activity.MainActivity;
 import com.zuofei.openesegl.utils.Base64Utils;
 import com.zuofei.openesegl.utils.SharedPreferencesUtils;
 import com.zuofei.openesegl.widget.LoadingDialog;
@@ -220,7 +219,7 @@ public class LoginActivity extends Activity
 
                     //登陆成功进入录音界面
                     //startActivity(new Intent(LoginActivity.this, MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK));
-                    startActivity(new Intent(LoginActivity.this, JiaoziVdideoPlayer.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK));
+                    startActivity(new Intent(LoginActivity.this, VdideoPlayerActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK));
                     finish();//关闭页面
                 } else {
                     showToast("输入的登录账号或密码不正确");
